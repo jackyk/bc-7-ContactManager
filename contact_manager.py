@@ -16,7 +16,7 @@ Options:
 import sys
 import cmd
 from docopt import docopt, DocoptExit
-from add_contact import ContactEntry
+from add_contact import ContactEntry, ContactSearch
 
 
 def docopt_cmd(func):
@@ -56,26 +56,36 @@ class MyInteractive (cmd.Cmd):
     prompt = '(contact_manager) '
     file = None
 
+
+    def add_contact(self, name, number):
+        new_contact = ContactEntry(name,number)
+        new_contact.add_contact()
+
+    def search(self, name):
+        search_item = ContactSearch(name)
+        search_item.search_contact_list()
+
+
     @docopt_cmd
     def do_add_contact(self,args):
         """Usage: add_contact -n <name> -p <phonenumber>"""
         # print/ args['<name>'], "number is ", args['<phonenumber>']
-
-        new_contact = ContactEntry(args['<name>'], args['<phonenumber>'])
-        new_contact.add_contact()
+        self.add_contact(args['<name>'], args['<phonenumber>'])
 
 
-    def do_search_contact(self ,args):
+
+
+    @docopt_cmd
+    def do_search_contact(self, args):
         """Usage: search_contact search <name>"""
-        # search = ''
-        #
-        new_search = ContactEntry(args['<name>'], args['<phonenumber>'])
-        # new_search.search_contact_list()
-        # new_search.args('<name>')
 
-        for name, my_number in add_contact.iteritems():
-            if name == args:
-                return args
+        self.search(args['<name>'])
+
+
+
+        # if name in search_contact_list.key():
+        #     print name
+
 
         # return new_search.add_contact(args['<name>'], args['phonenumber'])
 

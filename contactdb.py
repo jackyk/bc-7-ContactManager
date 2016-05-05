@@ -3,19 +3,21 @@ import sqlite3
 class ContactStore:
 
     def __init__(self):
-        self.db_1 = sqlite3.connect("contacts.db")
-        self.cursor = self.db_1.cursor()
+        self.db_2 = sqlite3.connect("Test.db")
+        self.cursor = self.db_2.cursor()
 
-        self.db_1.execute("CREATE TABLE IF NOT EXISTS C_LIST1(ID INT PRIMARY KEY AUTOINCREMENT, NAME TEXT ,PHONENUMBER TEXT)")
+        self.db_2.execute("CREATE TABLE IF NOT EXISTS Test1(ID INT PRIMARY KEY AUTOINCREMENT, NAME TEXT ,PHONENUMBER TEXT UNIQUE )")
 
     def contact_add(self, name, my_number):
         '''
         call number function
         '''
-        with self.db_1:
+        with self.db_2:
         #commmits and closes connecction
-            self.db_1.execute("INSERT INTO C_LIST1(NAME ,PHONENUMBER) VALUES('{}', '{}')" .format(name, my_number))
+            self.db_2.execute("INSERT INTO Test1(NAME ,PHONENUMBER) VALUES('{}', '{}')" .format(name, my_number))
 
-            # pass
-    def contact_search(self,name):
-        self.db_1.execute("SELECT * from C_LIST1 WHERE NAME LIKE '%{}%'.format(name)")
+
+    def contact_search(self, name):
+        query = self.db_2.execute("SELECT * from Test1 WHERE NAME LIKE '%{}%'".format(name))
+        # print query
+        return query

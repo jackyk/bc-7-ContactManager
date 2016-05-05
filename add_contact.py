@@ -17,10 +17,20 @@ class ContactEntry:
         connect_db = ContactStore()
         connect_db.contact_add(self.name, self.my_number)
 
+class ContactSearch:
+
+    def __init__(self, name):
+        self.name = name
+
     def search_contact_list(self):
 
         search_from_db = ContactStore()
-        search_from_db.contact_search(self.name)
+        result = search_from_db.contact_search(self.name)
+        # return result
+
+        for i in result:
+            print str(i[1]), i[2]
+
 
         # return contact_list
 
