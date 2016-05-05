@@ -14,7 +14,8 @@ class ContactStore:
         '''
         with self.db_1:
         #commmits and closes connecction
-            self.db_1.execute("INSERT INTO C_LIST1(NAME ,PHONENUMBER) VALUES('%s', '%s')" % (name, my_number))
+            self.db_1.execute("INSERT INTO C_LIST1(NAME ,PHONENUMBER) VALUES('{}', '{}')" .format(name, my_number))
 
             # pass
-    # def search_contact(self)
+    def contact_search(self,name):
+        self.db_1.execute("SELECT * from C_LIST1 WHERE NAME LIKE '%{}%'.format(name)")

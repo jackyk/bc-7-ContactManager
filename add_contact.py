@@ -17,6 +17,11 @@ class ContactEntry:
         connect_db = ContactStore()
         connect_db.contact_add(self.name, self.my_number)
 
+    def search_contact_list(self):
+
+        search_from_db = ContactStore()
+        search_from_db.contact_search(self.name)
+
         # return contact_list
 
         # if contact not in contact_list:
