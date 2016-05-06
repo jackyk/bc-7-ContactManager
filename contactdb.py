@@ -20,4 +20,7 @@ class ContactStore:
     def contact_search(self, name):
         query = self.db_2.execute("SELECT * from Test1 WHERE NAME LIKE '%{}%'".format(name))
         # print query
-        return query
+        result = [i for i in query]
+        query.close()
+        return result
+        # return query
