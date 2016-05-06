@@ -65,6 +65,7 @@ class MyInteractive (cmd.Cmd):
     def search(self, name):
         search_item = ContactSearch(name)
         search_item.search_contact_list()
+        
 
     def sms(self, name, message):
         send_msg = SendSms(name, message)
@@ -85,9 +86,9 @@ class MyInteractive (cmd.Cmd):
 
     @docopt_cmd
     def do_text(self, args):
-        """Usage: text <name> -m <message>"""
-        print 'i am run'
-        self.sms(args['<name>'], args['<message>'])
+        """Usage: text <name> -m <message>..."""
+
+        self.sms(args['<name>'],(" ".join(args['<message>'])))
 
 
     def do_quit(self, args):

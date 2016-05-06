@@ -33,11 +33,3 @@ class ContactSearch:
             print str(i[1]), i[2]
 
         return result
-
-
-
-
-    # def send_sms():
-    #     send_one_way = AfricasTalkingGateway()
-    #     send_one_way.sendMessage(self.to_, self.message_)
-    #
