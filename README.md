@@ -1,12 +1,12 @@
 # bc-7-ContactManager
-Bash Chat
+<bold>Bash Chat</bold>
 
 This program solve the problem of connecting with your loved ones when using your computer, your Mac etc as long as you have your console.
 IoT is happening and this is one way to embrace it.
 The App stores your contact away from your phone and also sends an sms.
 
 
-Installation
+<bold>Installation</bold>
 
 I : Clone my app from this repository <a href="https://github.com/jackyk/bc-7-ContactManager"/>Bash Chat</a>
 
