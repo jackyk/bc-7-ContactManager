@@ -25,5 +25,5 @@ II : Search for a contact
  ```
 III : Send sms
 ```
- text ContactName Message
+ text ContactName -m "message"
  ```
