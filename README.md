@@ -9,5 +9,7 @@ The App stores your contact away from your phone and also sends an sms.
 Installation
 
 I : Clone my app from this repository <a href="https://github.com/jackyk/bc-7-ContactManager"/>Bash Chat</a>
+
 II : Ensure you have a virtualenv to run this app [Optional].
+
 III : Ensure you have a python environment to , if not follow the following instructions for  <a href="https://www.python.org/">python installation</a>
