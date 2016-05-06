@@ -13,3 +13,16 @@ I : Clone my app from this repository <a href="https://github.com/jackyk/bc-7-Co
 II : Ensure you have a virtualenv to run this app [Optional].
 
 III : Ensure you have a python environment to , if not follow the following instructions for  <a href="https://www.python.org/">python installation</a>
+
+
+
+Commands
+ I : To add a contact
+      -n <Contact Name> -p <Phone Number>
+      
+II : Search for a contact
+      search <Contact Name>
+      
+III : Send sms
+      text <Contact Name> <message>
+      
