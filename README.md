@@ -16,11 +16,11 @@ III : Ensure you have a python environment to , if not follow the following inst
 Commands
 
  I : To add a contact
-      -n <Contact Name> -p <Phone Number>
-      
+ -n <Contact Name> -p <Phone Number>
+ 
 II : Search for a contact
-      search <Contact Name>
+ search <Contact Name>
       
 III : Send sms
-      text <Contact Name> <message>
+ text <Contact Name> <message>
       
